@@ -388,6 +388,48 @@
       text-align: center;
     }
 
+    /* ─── BUSINESSES / PRODUCTS ─────────────────────────── */
+    #products { background: var(--light); }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 2rem;
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .product-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .product-title {
+      font-family: var(--font);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.7rem;
+    }
+
+    .product-desc {
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+    }
+
     /* ─── CONTACT ──────────────────────────────────────── */
     #contact {
       background: var(--navy);
@@ -548,6 +590,7 @@
   <ul class="nav-links">
     <li><a href="#about"      data-es="Sobre mí"    data-en="About">About</a></li>
     <li><a href="#experience" data-es="Experiencia" data-en="Experience">Experience</a></li>
+    <li><a href="#products"   data-es="Negocios"    data-en="Businesses">Businesses</a></li>
     <li><a href="#insights"   data-es="Análisis"    data-en="Insights">Insights</a></li>
     <li><a href="#contact"    data-es="Contacto"    data-en="Contact">Contact</a></li>
     <li><button class="lang-btn" onclick="toggleLang()">ES</button></li>
@@ -678,6 +721,36 @@
           <p class="timeline-company">Domus Investments</p>
           <p class="timeline-desc" data-es="Gestión integral de Domus Investments, fondo de inversión privado. Toma de decisiones de inversión, análisis de activos, reporting a inversores y maximización de rentabilidad ajustada al riesgo." data-en="Comprehensive management of Domus Investments, a private investment fund. Investment decision-making, asset analysis, investor reporting, and maximization of risk-adjusted returns.">Comprehensive management of Domus Investments, a private investment fund. Investment decision-making, asset analysis, investor reporting, and maximization of risk-adjusted returns.</p>
         </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── BUSINESSES / PRODUCTS ─────────────────────────────── -->
+<section id="products">
+  <div class="container">
+    <span class="section-tag" data-es="Negocios" data-en="Businesses">Businesses</span>
+    <h2 class="section-title" data-es="Oportunidades de Inversión" data-en="Investment Opportunities">Investment Opportunities</h2>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <h3 class="product-title">IHIG — <span data-es="Hipotecas Privadas" data-en="Private Mortgages">Private Mortgages</span></h3>
+        <p class="product-desc" data-es="Pagarés hipotecarios &quot;balloon&quot; respaldados por bienes raíces residenciales en el Sur de la Florida. Rendimiento fijo del 20% anual, plazo de 8–14 meses, con devolución total del capital al vencimiento. Máximo 20% préstamo-valor sobre la propiedad." data-en="Balloon mortgage notes backed by residential real estate in South Florida. Fixed 20% annual yield, 8–14 month terms, with full principal returned at maturity. Maximum 20% loan-to-value on the property.">Balloon mortgage notes backed by residential real estate in South Florida. Fixed 20% annual yield, 8–14 month terms, with full principal returned at maturity. Maximum 20% loan-to-value on the property.</p>
+        <div class="product-links">
+          <a href="brochures/ihig/IHIG-Brochure.pdf" class="insight-download" target="_blank">⬇ &nbsp;<span data-es="Descargar Brochure" data-en="Download Brochure">Download Brochure</span></a>
+          <a href="brochures/ihig/IHIG-Contrato-Modelo.pdf" class="insight-download" target="_blank">⬇ &nbsp;<span data-es="Ver Contrato Modelo" data-en="View Sample Contract">View Sample Contract</span></a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <h3 class="product-title">Domus Investments</h3>
+        <p class="product-desc" data-es="Información próximamente." data-en="Information coming soon.">Information coming soon.</p>
+      </div>
+
+      <div class="product-card">
+        <h3 class="product-title">Domus Drive Capital</h3>
+        <p class="product-desc" data-es="Información próximamente." data-en="Information coming soon.">Information coming soon.</p>
       </div>
 
     </div>
