@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alessandro Colonna — Finance Professional</title>
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0a1628;
+      --navy2:  #0f2040;
+      --gold:   #c9a84c;
+      --gold2:  #e8c97a;
+      --light:  #f5f5f0;
+      --muted:  #8a8a8a;
+      --white:  #ffffff;
+      --font:   -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+      --sans:   -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--light);
+      color: var(--navy);
+      line-height: 1.6;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 4rem;
+      background: rgba(10, 22, 40, 0.97);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      font-family: var(--font);
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .lang-btn {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 0.3rem 0.8rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lang-btn:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(to right, rgba(10,22,40,0.88) 50%, rgba(10,22,40,0.55) 100%),
+        url('https://images.unsplash.com/photo-1534430480872-3498386e7856?w=1920&q=80') center/cover no-repeat;
+      padding: 8rem 4rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+    }
+
+    .hero-content { max-width: 700px; }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-name {
+      font-family: var(--font);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-title {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.55);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: var(--gold2);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat-number {
+      font-family: var(--font);
+      font-size: 2rem;
+      color: var(--gold);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ─── SECTIONS ─────────────────────────────────────── */
+    section { padding: 6rem 4rem; }
+
+    .section-tag {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: var(--font);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin-bottom: 3rem;
+      line-height: 1.15;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; }
+
+    /* ─── ABOUT ─────────────────────────────────────────── */
+    #about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+      font-weight: 400;
+    }
+
+    .about-skills { }
+
+    .skills-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--navy);
+      font-size: 0.78rem;
+      padding: 0.35rem 0.8rem;
+      margin: 0.3rem 0.3rem 0.3rem 0;
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── EXPERIENCE ───────────────────────────────────── */
+    #experience { background: var(--light); }
+
+    .timeline { position: relative; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: var(--gold);
+      opacity: 0.3;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      padding-left: 0;
+    }
+
+    .timeline-period {
+      font-size: 0.78rem;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      padding-top: 0.25rem;
+      text-align: right;
+    }
+
+    .timeline-body {
+      padding-left: 2rem;
+      border-left: 2px solid var(--gold);
+      position: relative;
+    }
+
+    .timeline-body::before {
+      content: '';
+      position: absolute;
+      left: -5px; top: 6px;
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .timeline-role {
+      font-family: var(--font);
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-company {
+      font-size: 0.82rem;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ─── MARKET INSIGHTS ─────────────────────────────── */
+    #insights { background: var(--white); }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .insight-card {
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 1.8rem;
+      position: relative;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: var(--light);
+    }
+
+    .insight-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .insight-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .insight-title {
+      font-family: var(--font);
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .insight-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .insight-desc {
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .insight-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+
+    .insight-download:hover { border-color: var(--gold); }
+
+    .insights-note {
+      margin-top: 2rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* ─── CONTACT ──────────────────────────────────────── */
+    #contact {
+      background: var(--navy);
+      text-align: center;
+    }
+
+    #contact .section-title { color: var(--white); }
+    #contact .section-tag { }
+
+    .contact-subtitle {
+      color: rgba(255,255,255,0.5);
+      font-size: 1rem;
+      max-width: 400px;
+      margin: -1.5rem auto 3rem;
+      line-height: 1.7;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 0.8rem 1.8rem;
+      transition: all 0.2s;
+      letter-spacing: 0.03em;
+    }
+
+    .contact-link:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    /* ─── FOOTER ───────────────────────────────────────── */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ─── MARKET TICKER ────────────────────────────────── */
+    #market-ticker {
+      position: fixed;
+      top: 56px;
+      left: 0; right: 0;
+      z-index: 99;
+      background: rgba(6, 14, 26, 0.97);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 0.45rem 2rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+    }
+
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .ticker-label {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+    }
+
+    .ticker-price {
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .ticker-change {
+      font-size: 0.72rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 2px;
+    }
+
+    .ticker-change.up   { color: #4ade80; }
+    .ticker-change.down { color: #f87171; }
+
+    .ticker-dot {
+      width: 1px;
+      height: 16px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    #market-ticker .ticker-refresh {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.2);
+      margin-left: 0.5rem;
+    }
+
+    #hero { padding-top: 9.5rem; }
+
+    /* ─── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .nav-links li:not(:last-child) { display: none; }
+
+      #hero { padding: 7rem 1.5rem 3rem; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+
+      section { padding: 4rem 1.5rem; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+      .timeline-item { grid-template-columns: 1fr; gap: 0.4rem; }
+      .timeline-period { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ────────────────────────────────────────────── -->
+<!-- ── MARKET TICKER ────────────────────────────────────── -->
+<div id="market-ticker">
+  <div class="ticker-item">
+    <span class="ticker-label">S&amp;P 500</span>
+    <span class="ticker-price" id="sp-price">—</span>
+    <span class="ticker-change" id="sp-change">—</span>
+  </div>
+  <div class="ticker-dot"></div>
+  <div class="ticker-item">
+    <span class="ticker-label">NASDAQ</span>
+    <span class="ticker-price" id="nq-price">—</span>
+    <span class="ticker-change" id="nq-change">—</span>
+  </div>
+  <div class="ticker-dot"></div>
+  <div class="ticker-item">
+    <span class="ticker-label">BTC</span>
+    <span class="ticker-price" id="btc-price">—</span>
+    <span class="ticker-change" id="btc-change">—</span>
+  </div>
+  <span class="ticker-refresh" id="ticker-time"></span>
+</div>
+
+<nav>
+  <a href="#hero" class="nav-logo">AC</a>
+  <ul class="nav-links">
+    <li><a href="#about"      data-es="Sobre mí"    data-en="About">About</a></li>
+    <li><a href="#experience" data-es="Experiencia" data-en="Experience">Experience</a></li>
+    <li><a href="#insights"   data-es="Análisis"    data-en="Insights">Insights</a></li>
+    <li><a href="#contact"    data-es="Contacto"    data-en="Contact">Contact</a></li>
+    <li><button class="lang-btn" onclick="toggleLang()">ES</button></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-content">
+    <span class="hero-tag" data-es="Finanzas &amp; Inversiones" data-en="Finance &amp; Investments">Finance &amp; Investments</span>
+    <h1 class="hero-name">Alessandro<br>Colonna</h1>
+    <p class="hero-title" data-es="Profesional financiero con más de 12 años de experiencia en banca, gestión de fondos privados y captación de capital en mercados internacionales." data-en="Finance professional with over 12 years of experience in banking, private fund management, and capital raising in international markets.">Finance professional with over 12 years of experience in banking, private fund management, and capital raising in international markets.</p>
+    <a href="#contact" class="hero-cta" data-es="Contactar" data-en="Get in Touch">Get in Touch</a>
+    <div class="hero-stats">
+      <div>
+        <span class="stat-number">12+</span>
+        <span class="stat-label" data-es="Años de experiencia" data-en="Years of experience">Years of experience</span>
+      </div>
+      <div>
+        <span class="stat-number">3</span>
+        <span class="stat-label" data-es="Países" data-en="Countries">Countries</span>
+      </div>
+      <div>
+        <span class="stat-number">4</span>
+        <span class="stat-label" data-es="Sectores financieros" data-en="Finance sectors">Finance sectors</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ──────────────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <span class="section-tag" data-es="Sobre mí" data-en="About Me">About Me</span>
+    <h2 class="section-title" data-es="Finanzas con visión global" data-en="Finance with a global vision">Finance with a global vision</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p data-es="Soy Alessandro Colonna, profesional financiero con más de 12 años de trayectoria internacional en banca, gestión de fondos y captación de capital. He trabajado en entornos de alta exigencia en Venezuela, España y Estados Unidos, liderando operaciones financieras complejas y construyendo relaciones de confianza con inversores y clientes." data-en="I am Alessandro Colonna, a finance professional with over 12 years of international career in banking, fund management, and capital raising. I have worked in demanding environments across Venezuela, Spain, and the United States, leading complex financial operations and building trust-based relationships with investors and clients.">I am Alessandro Colonna, a finance professional with over 12 years of international career in banking, fund management, and capital raising. I have worked in demanding environments across Venezuela, Spain, and the United States, leading complex financial operations and building trust-based relationships with investors and clients.</p>
+        <p data-es="Mi enfoque combina el rigor técnico de la banca tradicional con la agilidad de los mercados privados, siempre orientado a generar valor real para mis clientes e inversores." data-en="My approach combines the technical rigor of traditional banking with the agility of private markets, always focused on generating real value for my clients and investors.">My approach combines the technical rigor of traditional banking with the agility of private markets, always focused on generating real value for my clients and investors.</p>
+      </div>
+      <div class="about-skills">
+        <p class="skills-title" data-es="Áreas de expertise" data-en="Areas of expertise">Areas of expertise</p>
+        <span class="skill-tag" data-es="Banca Privada" data-en="Private Banking">Private Banking</span>
+        <span class="skill-tag" data-es="Gestión de Fondos" data-en="Fund Management">Fund Management</span>
+        <span class="skill-tag" data-es="Captación de Capital" data-en="Capital Raising">Capital Raising</span>
+        <span class="skill-tag" data-es="Préstamos Privados" data-en="Private Lending">Private Lending</span>
+        <span class="skill-tag" data-es="Inversiones Alternativas" data-en="Alternative Investments">Alternative Investments</span>
+        <span class="skill-tag" data-es="Financiación Vehicular" data-en="Vehicle Financing">Vehicle Financing</span>
+        <span class="skill-tag" data-es="Relaciones con Inversores" data-en="Investor Relations">Investor Relations</span>
+        <span class="skill-tag" data-es="Mercados Internacionales" data-en="International Markets">International Markets</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ─────────────────────────────────────── -->
+<section id="experience">
+  <div class="container">
+    <span class="section-tag" data-es="Trayectoria" data-en="Career">Career</span>
+    <h2 class="section-title" data-es="Experiencia profesional" data-en="Professional Experience">Professional Experience</h2>
+    <div class="timeline">
+
+      <!-- Banco Santander -->
+      <div class="timeline-item">
+        <div class="timeline-period" data-es="Dic 2018 – Presente · 7 años 9 meses · Madrid" data-en="Dec 2018 – Present · 7 yrs 9 mos · Madrid">Dec 2018 – Present · 7 yrs 9 mos · Madrid</div>
+        <div class="timeline-body">
+          <h3 class="timeline-role" data-es="CIB Treasury Officer II" data-en="CIB Treasury Officer II">CIB Treasury Officer II</h3>
+          <p class="timeline-company">Banco Santander · Full-time</p>
+          <p class="timeline-desc" data-es="Coordinación y gestión de las responsabilidades operativas diarias dentro de Cash Management y Treasury Operations, asegurando la liquidación precisa de transacciones financieras que incluyen productos derivados como SWAPs, Cross Currency Swaps, Caps, Floors y Opciones. Gestión pre y post ejecución de derivados, productos del mercado monetario, FX y derivados. Reconciliación y balance de operaciones diarias con clearing houses como LCH, EUREX y CME. Seguimiento de tipos de interés globales (EUR, USD, GBP, CLP, COP, BRL, PEN, MXN). Participación en proyectos de automatización de procesos. Sistemas: Murex FXFI – MarkitWire – LCH SWAPAGENT." data-en="Coordinate and manage daily operational responsibilities within Cash Management and Treasury Operations, ensuring accurate settlement of financial transactions including derivative products such as SWAPs, Cross Currency Swaps, Caps, Floors, and Options. Manage pre and post execution for derivatives, money market products, FX and derivatives. Reconciliation and balancing with clearing houses: LCH, EUREX, and CME. Monitor global currency interest rates (EUR, USD, GBP, CLP, COP, BRL, PEN, MXN). Participation in process automation projects. Financial systems: Murex FXFI – MarkitWire – LCH SWAPAGENT.">Coordinate and manage daily operational responsibilities within Cash Management and Treasury Operations, ensuring accurate settlement of financial transactions including derivative products such as SWAPs, Cross Currency Swaps, Caps, Floors, and Options. Manage pre and post execution for derivatives, money market products, FX and derivatives. Reconciliation and balancing with clearing houses: LCH, EUREX, and CME. Monitor global currency interest rates (EUR, USD, GBP, CLP, COP, BRL, PEN, MXN). Financial systems: Murex FXFI – MarkitWire – LCH SWAPAGENT.</p>
+        </div>
+      </div>
+
+      <!-- BBVA -->
+      <div class="timeline-item">
+        <div class="timeline-period" data-es="Abr 2018 – Oct 2018 · 7 meses · Madrid" data-en="Apr 2018 – Oct 2018 · 7 mos · Madrid">Apr 2018 – Oct 2018 · 7 mos · Madrid</div>
+        <div class="timeline-body">
+          <h3 class="timeline-role" data-es="Analista de Blanqueo de Capitales — Compliance Regulatorio" data-en="Money Laundering Analyst — Regulatory Compliance">Money Laundering Analyst — Regulatory Compliance</h3>
+          <p class="timeline-company">BBVA España · Full-time</p>
+          <p class="timeline-desc" data-es="Análisis y detección de transacciones sospechosas en cuentas bancarias individuales y corporativas para garantizar la prevención efectiva del blanqueo de capitales." data-en="Analysis and detection of suspicious transactions in individual and corporate bank accounts to ensure effective prevention of money laundering.">Analysis and detection of suspicious transactions in individual and corporate bank accounts to ensure effective prevention of money laundering.</p>
+        </div>
+      </div>
+
+      <!-- Accenture -->
+      <div class="timeline-item">
+        <div class="timeline-period" data-es="Ene 2018 – Abr 2018 · 4 meses · Madrid" data-en="Jan 2018 – Apr 2018 · 4 mos · Madrid">Jan 2018 – Apr 2018 · 4 mos · Madrid</div>
+        <div class="timeline-body">
+          <h3 class="timeline-role" data-es="Consultor Financiero" data-en="Financial Consultant">Financial Consultant</h3>
+          <p class="timeline-company">Accenture España · Full-time</p>
+          <p class="timeline-desc" data-es="Participación activa en el proyecto de migración de operaciones de Back Office de Renta Variable y Renta Fija en el ámbito de la banca de inversión." data-en="Active involvement in the migration project of Equity and Fixed Income Back Office operations within the realm of investment banking.">Active involvement in the migration project of Equity and Fixed Income Back Office operations within the realm of investment banking.</p>
+        </div>
+      </div>
+
+      <!-- Capital Raising Miami -->
+      <div class="timeline-item">
+        <div class="timeline-period" data-es="5 años · Presente · Miami, EE.UU." data-en="5 years · Present · Miami, USA">5 years · Present · Miami, USA</div>
+        <div class="timeline-body">
+          <h3 class="timeline-role" data-es="Director de Captación de Capital" data-en="Capital Raising Director">Capital Raising Director</h3>
+          <p class="timeline-company">IHIG · Miami, USA</p>
+          <p class="timeline-desc" data-es="Responsable de la captación de capital para IHIG, empresa de préstamos privados en el mercado estadounidense. Desarrollo y gestión de relaciones con inversores, estructuración de productos de inversión y expansión de la base de clientes en el mercado de Miami." data-en="Responsible for capital raising for IHIG, a private lending company in the US market. Development and management of investor relations, structuring of investment products, and expansion of the client base in the Miami market.">Responsible for capital raising for IHIG, a private lending company in the US market. Development and management of investor relations, structuring of investment products, and expansion of the client base in the Miami market.</p>
+        </div>
+      </div>
+
+      <!-- Citi -->
+      <div class="timeline-item">
+        <div class="timeline-period" data-es="Feb 2015 – Mar 2016 · 1 año 2 meses · Venezuela" data-en="Feb 2015 – Mar 2016 · 1 yr 2 mos · Venezuela">Feb 2015 – Mar 2016 · 1 yr 2 mos · Venezuela</div>
+        <div class="timeline-body">
+          <h3 class="timeline-role" data-es="Asesor Financiero — Banca Privada" data-en="Financial Advisor — Private Banking">Financial Advisor — Private Banking</h3>
+          <p class="timeline-company">Citi (Citi Valores) · Full-time · Venezuela</p>
+          <p class="timeline-desc" data-es="Asesoramiento financiero a clientes individuales (mínimo $150,000) en productos de inversión. Análisis y seguimiento de movimientos y eventos en mercados de renta variable globales." data-en="Financially advising individual clients (minimum $150,000) on investment products. Conducting comprehensive studies and analyses of movements and events in global stock markets.">Financially advising individual clients (minimum $150,000) on investment products. Conducting comprehensive studies and analyses of movements and events in global stock markets.</p>
+        </div>
+      </div>
+
+      <!-- Vehicle Financing Venezuela -->
+      <div class="timeline-item">
+        <div class="timeline-period" data-es="1 año · Presente · Venezuela" data-en="1 year · Present · Venezuela">1 year · Present · Venezuela</div>
+        <div class="timeline-body">
+          <h3 class="timeline-role" data-es="Director General" data-en="General Director">General Director</h3>
+          <p class="timeline-company">Domus Drive Capital · Venezuela</p>
+          <p class="timeline-desc" data-es="Dirección ejecutiva de Domus Drive Capital, empresa financiadora de vehículos. Supervisión de operaciones, gestión de cartera de crédito, definición de estrategia comercial y liderazgo del equipo directivo." data-en="Executive direction of Domus Drive Capital, a vehicle financing company. Oversight of operations, credit portfolio management, commercial strategy definition, and leadership of the management team.">Executive direction of Domus Drive Capital, a vehicle financing company. Oversight of operations, credit portfolio management, commercial strategy definition, and leadership of the management team.</p>
+        </div>
+      </div>
+
+      <!-- Private Fund -->
+      <div class="timeline-item">
+        <div class="timeline-period" data-es="5 años · Presente" data-en="5 years · Present">5 years · Present</div>
+        <div class="timeline-body">
+          <h3 class="timeline-role" data-es="Gestor de Fondo Privado" data-en="Private Fund Manager">Private Fund Manager</h3>
+          <p class="timeline-company">Domus Investments</p>
+          <p class="timeline-desc" data-es="Gestión integral de Domus Investments, fondo de inversión privado. Toma de decisiones de inversión, análisis de activos, reporting a inversores y maximización de rentabilidad ajustada al riesgo." data-en="Comprehensive management of Domus Investments, a private investment fund. Investment decision-making, asset analysis, investor reporting, and maximization of risk-adjusted returns.">Comprehensive management of Domus Investments, a private investment fund. Investment decision-making, asset analysis, investor reporting, and maximization of risk-adjusted returns.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── MARKET INSIGHTS ────────────────────────────────────── -->
+<section id="insights">
+  <div class="container">
+    <span class="section-tag" data-es="Análisis de Mercados" data-en="Market Analysis">Market Analysis</span>
+    <h2 class="section-title" data-es="Perspectivas Semanales" data-en="Weekly Insights">Weekly Insights</h2>
+    <div class="insights-grid">
+
+      <div class="insight-card">
+        <span class="insight-badge" data-es="Última edición" data-en="Latest">Latest</span>
+        <h3 class="insight-title" data-es="Resumen Semanal de Mercados — Semana del 27 Jul al 1 Ago" data-en="Weekly Market Recap — Week of Jul 27 – Aug 1">Weekly Market Recap — Week of Jul 27 – Aug 1</h3>
+        <p class="insight-date">August 3, 2026</p>
+        <p class="insight-desc" data-es="Los mercados cerraron la semana en verde —S&amp;P 500 +1.1%, Nasdaq +1.6%, Dow +1%— pero el liderazgo fue extremadamente concentrado en unas pocas tecnológicas. Microsoft protagonizó el mayor salto de capitalización en un solo día de la historia tras resultados sólidos en Azure, mientras Meta se desplomó por preocupaciones de gasto de capital. La Fed mantuvo tasas sin cambios (con tres disidencias), y el repunte de los rendimientos que siguió desencadenó liquidaciones forzadas en fondos apalancados en IA. Fundstrat está dividido: mientras algunos analistas leen esto como una posible capitulación técnica, otros advierten que sectores como salud y financieras —no tecnología— lideran la fortaleza real del mercado. Julio cerró prácticamente plano para el S&amp;P y en rojo para el Nasdaq." data-en="Markets closed the week higher —S&amp;P 500 +1.1%, Nasdaq +1.6%, Dow +1%— but leadership was heavily concentrated in a handful of tech names. Microsoft posted the largest single-day market-cap gain in history on strong Azure results, while Meta sold off sharply on capex concerns. The Fed held rates steady (with three dissents), and the resulting bond yield spike triggered forced deleveraging at AI-focused leveraged funds. Fundstrat analysts are split: some read this as a possible technical capitulation, while others flag healthcare and financials — not tech — as where real market strength now lives. July closed roughly flat for the S&amp;P and in the red for the Nasdaq.">Markets closed the week higher —S&amp;P 500 +1.1%, Nasdaq +1.6%, Dow +1%— but leadership was heavily concentrated in a handful of tech names. Microsoft posted the largest single-day market-cap gain in history on strong Azure results, while Meta sold off sharply on capex concerns. The Fed held rates steady (with three dissents), and the resulting bond yield spike triggered forced deleveraging at AI-focused leveraged funds. Fundstrat analysts are split: some read this as a possible technical capitulation, while others flag healthcare and financials — not tech — as where real market strength now lives. July closed roughly flat for the S&amp;P and in the red for the Nasdaq.</p>
+        <p class="insight-date" style="margin-top:-0.8rem;margin-bottom:1.5rem;" data-es="Fuentes: Fundstrat/FS Insight · Bloomberg · MarketWatch" data-en="Sources: Fundstrat/FS Insight · Bloomberg · MarketWatch">Sources: Fundstrat/FS Insight · Bloomberg · MarketWatch</p>
+        <a href="reports/weekly-2026-08-03.pdf" class="insight-download" download>⬇ &nbsp;<span data-es="Descargar PDF" data-en="Download PDF">Download PDF</span></a>
+      </div>
+
+      <div class="insight-card">
+        <span class="insight-badge" style="background:rgba(201,168,76,0.15);color:var(--gold);" data-es="Próximamente" data-en="Coming Soon">Coming Soon</span>
+        <h3 class="insight-title" data-es="Resumen Semanal de Mercados — Semana del 3 al 7 Ago" data-en="Weekly Market Recap — Week of Aug 3 – 7">Weekly Market Recap — Week of Aug 3 – 7</h3>
+        <p class="insight-date" data-es="Disponible el próximo lunes" data-en="Available next Monday">Available next Monday</p>
+        <p class="insight-desc" data-es="El análisis de la próxima semana estará disponible aquí automáticamente cada lunes." data-en="Next week's analysis will be available here automatically every Monday.">Next week's analysis will be available here automatically every Monday.</p>
+      </div>
+
+    </div>
+    <p class="insights-note" data-es="Los análisis se publican cada lunes. Suscríbete a las fuentes originales: Fundstrat · MarketWatch · Bloomberg." data-en="Insights are published every Monday. Subscribe to the original sources: Fundstrat · MarketWatch · Bloomberg.">Insights are published every Monday. Subscribe to the original sources: Fundstrat · MarketWatch · Bloomberg.</p>
+  </div>
+</section>
+
+<!-- ── CONTACT ─────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <span class="section-tag" data-es="Contacto" data-en="Contact">Contact</span>
+    <h2 class="section-title" data-es="Hablemos" data-en="Let's Talk">Let's Talk</h2>
+    <p class="contact-subtitle" data-es="Si buscas un profesional financiero con experiencia internacional, no dudes en contactarme." data-en="If you're looking for a finance professional with international experience, feel free to reach out.">If you're looking for a finance professional with international experience, feel free to reach out.</p>
+    <div class="contact-links">
+      <a href="mailto:alessandro@domusinvestments.es" class="contact-link">
+        ✉ &nbsp;alessandro@domusinvestments.es
+      </a>
+      <a href="https://www.linkedin.com/in/alessandro-colonna-urdaneta-0063b1b1/" target="_blank" class="contact-link">
+        in &nbsp;LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────── -->
+<footer>
+  <span>© 2026 Alessandro Colonna</span>
+</footer>
+
+<!-- ── SCRIPTS ─────────────────────────────────────────── -->
+<script>
+  /* ── Language toggle ─────────────────────────── */
+  let currentLang = 'en';
+
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'es' : 'en';
+    const btn = document.querySelector('.lang-btn');
+    btn.textContent = currentLang === 'en' ? 'ES' : 'EN';
+
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const text = el.getAttribute('data-' + currentLang);
+      if (text) el.innerHTML = text;
+    });
+
+    document.documentElement.lang = currentLang;
+  }
+
+  /* ── Market ticker ───────────────────────────── */
+  const PROXY = 'https://api.allorigins.win/raw?url=';
+
+  function fmt(n, decimals) {
+    return n.toLocaleString('en-US', { minimumFractionDigits: decimals ?? 2, maximumFractionDigits: decimals ?? 2 });
+  }
+
+  function setTicker(priceId, changeId, price, pct) {
+    document.getElementById(priceId).textContent = '$' + fmt(price);
+    const el = document.getElementById(changeId);
+    const sign = pct >= 0 ? '+' : '';
+    el.textContent = sign + fmt(pct, 2) + '%';
+    el.className = 'ticker-change ' + (pct >= 0 ? 'up' : 'down');
+  }
+
+  async function fetchStock(symbol, priceId, changeId) {
+    try {
+      const url = 'https://query1.finance.yahoo.com/v8/finance/chart/' + symbol + '?range=1d&interval=5m';
+      const res = await fetch(PROXY + encodeURIComponent(url));
+      const data = await res.json();
+      const meta = data.chart.result[0].meta;
+      const price = meta.regularMarketPrice;
+      const prev  = meta.chartPreviousClose;
+      const pct   = (price - prev) / prev * 100;
+      setTicker(priceId, changeId, price, pct);
+    } catch(e) {
+      document.getElementById(priceId).textContent = 'N/A';
+      document.getElementById(changeId).textContent = '';
+    }
+  }
+
+  async function fetchBTC() {
+    try {
+      const res  = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true');
+      const data = await res.json();
+      setTicker('btc-price', 'btc-change', data.bitcoin.usd, data.bitcoin.usd_24h_change);
+    } catch(e) {
+      document.getElementById('btc-price').textContent = 'N/A';
+      document.getElementById('btc-change').textContent = '';
+    }
+  }
+
+  function updateAll() {
+    fetchStock('%5EGSPC', 'sp-price', 'sp-change');
+    fetchStock('%5EIXIC', 'nq-price', 'nq-change');
+    fetchBTC();
+    const now = new Date();
+    document.getElementById('ticker-time').textContent =
+      'Updated ' + now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  }
+
+  updateAll();
+  setInterval(updateAll, 60000);
+</script>
+
+</body>
+</html>
