@@ -85,6 +85,17 @@
       color: var(--navy);
     }
 
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--white);
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0.3rem 0.4rem;
+    }
+
     /* ─── HERO ─────────────────────────────────────────── */
     #hero {
       min-height: 100vh;
@@ -545,8 +556,24 @@
     /* ─── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.2rem; }
-      .nav-links li:not(:last-child) { display: none; }
+
+      .nav-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.1rem;
+        background: rgba(6, 14, 26, 0.98);
+        padding: 1.2rem 1.5rem 1.5rem;
+        border-top: 1px solid rgba(201,168,76,0.15);
+      }
+
+      .nav-links.open { display: flex; }
 
       #hero { padding: 7rem 1.5rem 3rem; }
       .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
@@ -587,7 +614,8 @@
 
 <nav>
   <a href="#hero" class="nav-logo">AC</a>
-  <ul class="nav-links">
+  <button class="nav-toggle" id="navToggle" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">☰</button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#about"      data-es="Sobre mí"    data-en="About">About</a></li>
     <li><a href="#experience" data-es="Experiencia" data-en="Experience">Experience</a></li>
     <li><a href="#products"   data-es="Negocios"    data-en="Businesses">Businesses</a></li>
@@ -830,6 +858,26 @@
 
     document.documentElement.lang = currentLang;
   }
+
+  /* ── Mobile nav toggle ───────────────────────── */
+  const navLinks  = document.getElementById('navLinks');
+  const navToggle = document.getElementById('navToggle');
+
+  function toggleMenu() {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+    navToggle.textContent = isOpen ? '✕' : '☰';
+  }
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      setTimeout(() => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.textContent = '☰';
+      }, 0);
+    });
+  });
 
   /* ── Market ticker ───────────────────────────── */
   const PROXY = 'https://api.allorigins.win/raw?url=';
