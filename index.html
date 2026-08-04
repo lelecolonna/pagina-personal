@@ -123,9 +123,7 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background:
-        linear-gradient(to right, rgba(10,22,40,0.88) 50%, rgba(10,22,40,0.55) 100%),
-        url('https://images.unsplash.com/photo-1534430480872-3498386e7856?w=1920&q=80') center/cover no-repeat;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
       padding: 8rem 4rem 4rem;
       position: relative;
       overflow: hidden;
@@ -139,10 +137,48 @@
       width: 600px;
       height: 600px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
     }
 
-    .hero-content { max-width: 700px; }
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content { max-width: 620px; flex-shrink: 0; }
+
+    .hero-photo {
+      flex-shrink: 0;
+      width: 320px;
+      height: 400px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+      border: 1px solid rgba(201,168,76,0.35);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-photo::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 4px;
+      background: var(--gold);
+    }
 
     .hero-tag {
       display: inline-block;
@@ -598,7 +634,10 @@
       .nav-links.open { display: flex; }
 
       #hero { padding: 7rem 1.5rem 3rem; }
-      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .hero-inner { flex-direction: column-reverse; gap: 2.5rem; text-align: center; }
+      .hero-photo { width: 220px; height: 280px; }
+      .hero-title { margin-left: auto; margin-right: auto; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
 
       section { padding: 4rem 1.5rem; }
 
@@ -649,6 +688,7 @@
 
 <!-- ── HERO ───────────────────────────────────────────── -->
 <section id="hero">
+  <div class="hero-inner">
   <div class="hero-content">
     <span class="hero-tag" data-es="Finanzas &amp; Inversiones" data-en="Finance &amp; Investments">Finance &amp; Investments</span>
     <h1 class="hero-name">Alessandro<br>Colonna</h1>
@@ -668,6 +708,10 @@
         <span class="stat-label" data-es="Sectores financieros" data-en="Finance sectors">Finance sectors</span>
       </div>
     </div>
+  </div>
+  <div class="hero-photo">
+    <img src="assets/alessandro-photo.jpg" alt="Alessandro Colonna" />
+  </div>
   </div>
 </section>
 
