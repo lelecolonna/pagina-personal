@@ -458,7 +458,7 @@
     }
 
     /* ─── BUSINESSES / PRODUCTS ─────────────────────────── */
-    #products { background: var(--light); }
+    #products { background: var(--white); }
 
     .products-grid {
       display: grid;
@@ -469,7 +469,7 @@
     .product-card {
       border: 1px solid rgba(201,168,76,0.2);
       padding: 2rem;
-      background: var(--white);
+      background: var(--light);
       transition: border-color 0.2s, box-shadow 0.2s;
     }
 
@@ -501,10 +501,10 @@
 
     /* ─── TRACK RECORD CHART ─────────────────────────────── */
     .track-record {
-      background: var(--white);
+      background: var(--light);
       border: 1px solid rgba(201,168,76,0.2);
       padding: 2rem 2rem 1.5rem;
-      margin-top: 1.5rem;
+      margin-top: 3rem;
     }
 
     .track-record-header {
@@ -570,6 +570,20 @@
       font-size: 0.72rem;
       color: var(--muted);
       margin-top: 0.5rem;
+    }
+
+    .products-cta {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .products-cta-text {
+      font-family: var(--font);
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 1.3rem;
     }
 
     /* ─── CONTACT ──────────────────────────────────────── */
@@ -683,6 +697,22 @@
     }
 
     #hero { padding-top: 9.5rem; }
+
+    /* ─── SCROLL REVEAL ────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { transition: none; opacity: 1; transform: none; }
+    }
 
     /* ─── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 768px) {
@@ -821,7 +851,7 @@
     <div class="timeline">
 
       <!-- Banco Santander -->
-      <div class="timeline-item">
+      <div class="timeline-item reveal">
         <div class="timeline-period" data-es="Dic 2018 – Presente · 7 años 9 meses · Madrid" data-en="Dec 2018 – Present · 7 yrs 9 mos · Madrid">Dec 2018 – Present · 7 yrs 9 mos · Madrid</div>
         <div class="timeline-body">
           <h3 class="timeline-role" data-es="CIB Treasury Officer II" data-en="CIB Treasury Officer II">CIB Treasury Officer II</h3>
@@ -831,7 +861,7 @@
       </div>
 
       <!-- BBVA -->
-      <div class="timeline-item">
+      <div class="timeline-item reveal">
         <div class="timeline-period" data-es="Abr 2018 – Oct 2018 · 7 meses · Madrid" data-en="Apr 2018 – Oct 2018 · 7 mos · Madrid">Apr 2018 – Oct 2018 · 7 mos · Madrid</div>
         <div class="timeline-body">
           <h3 class="timeline-role" data-es="Analista de Blanqueo de Capitales — Compliance Regulatorio" data-en="Money Laundering Analyst — Regulatory Compliance">Money Laundering Analyst — Regulatory Compliance</h3>
@@ -841,7 +871,7 @@
       </div>
 
       <!-- Accenture -->
-      <div class="timeline-item">
+      <div class="timeline-item reveal">
         <div class="timeline-period" data-es="Ene 2018 – Abr 2018 · 4 meses · Madrid" data-en="Jan 2018 – Apr 2018 · 4 mos · Madrid">Jan 2018 – Apr 2018 · 4 mos · Madrid</div>
         <div class="timeline-body">
           <h3 class="timeline-role" data-es="Consultor Financiero" data-en="Financial Consultant">Financial Consultant</h3>
@@ -851,7 +881,7 @@
       </div>
 
       <!-- Capital Raising Miami -->
-      <div class="timeline-item">
+      <div class="timeline-item reveal">
         <div class="timeline-period" data-es="5 años · Presente · Miami, EE.UU." data-en="5 years · Present · Miami, USA">5 years · Present · Miami, USA</div>
         <div class="timeline-body">
           <h3 class="timeline-role" data-es="Director de Captación de Capital" data-en="Capital Raising Director">Capital Raising Director</h3>
@@ -861,7 +891,7 @@
       </div>
 
       <!-- Citi -->
-      <div class="timeline-item">
+      <div class="timeline-item reveal">
         <div class="timeline-period" data-es="Feb 2015 – Mar 2016 · 1 año 2 meses · Venezuela" data-en="Feb 2015 – Mar 2016 · 1 yr 2 mos · Venezuela">Feb 2015 – Mar 2016 · 1 yr 2 mos · Venezuela</div>
         <div class="timeline-body">
           <h3 class="timeline-role" data-es="Asesor Financiero — Banca Privada" data-en="Financial Advisor — Private Banking">Financial Advisor — Private Banking</h3>
@@ -871,7 +901,7 @@
       </div>
 
       <!-- Vehicle Financing Venezuela -->
-      <div class="timeline-item">
+      <div class="timeline-item reveal">
         <div class="timeline-period" data-es="1 año · Presente · Venezuela" data-en="1 year · Present · Venezuela">1 year · Present · Venezuela</div>
         <div class="timeline-body">
           <h3 class="timeline-role" data-es="Director General" data-en="General Director">General Director</h3>
@@ -881,7 +911,7 @@
       </div>
 
       <!-- Private Fund -->
-      <div class="timeline-item">
+      <div class="timeline-item reveal">
         <div class="timeline-period" data-es="5 años · Presente" data-en="5 years · Present">5 years · Present</div>
         <div class="timeline-body">
           <h3 class="timeline-role" data-es="Gestor de Fondo Privado" data-en="Private Fund Manager">Private Fund Manager</h3>
@@ -901,7 +931,7 @@
     <h2 class="section-title" data-es="Oportunidades de Inversión" data-en="Investment Opportunities">Investment Opportunities</h2>
     <div class="products-grid">
 
-      <div class="product-card">
+      <div class="product-card reveal">
         <h3 class="product-title">IHIG — <span data-es="Hipotecas Privadas" data-en="Private Mortgages">Private Mortgages</span></h3>
         <p class="product-desc" data-es="Pagarés hipotecarios &quot;balloon&quot; respaldados por bienes raíces residenciales en el Sur de la Florida. Rendimiento fijo del 20% anual, plazo de 8–14 meses, con devolución total del capital al vencimiento. Máximo 20% préstamo-valor sobre la propiedad." data-en="Balloon mortgage notes backed by residential real estate in South Florida. Fixed 20% annual yield, 8–14 month terms, with full principal returned at maturity. Maximum 20% loan-to-value on the property.">Balloon mortgage notes backed by residential real estate in South Florida. Fixed 20% annual yield, 8–14 month terms, with full principal returned at maturity. Maximum 20% loan-to-value on the property.</p>
         <div class="product-links">
@@ -910,7 +940,7 @@
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card reveal">
         <h3 class="product-title">Domus Investments — <span data-es="Fondo DIFE" data-en="DIFE Fund">DIFE Fund</span></h3>
         <p class="product-desc" data-es="Domus Investments Fund - Emerald (DIFE), fondo de deuda privada gestionado de forma discrecional, diversificado en Venezuela, España, Rep. Dominicana y EE.UU. (bienes raíces, restaurantes, servicios financieros y más). $3.9M en activos bajo gestión, retorno anualizado histórico de ~17%, con $271K ya distribuidos en dividendos a 47 inversionistas. Inversión mínima $10,000, plazo recomendado de 3 años, dividendos trimestrales." data-en="Domus Investments Fund - Emerald (DIFE) is a discretionary private-debt fund diversified across Venezuela, Spain, the Dominican Republic, and the US (real estate, restaurants, financial services, and more). $3.9M in assets under management, a historical ~17% annualized return, and $271K already distributed in dividends to 47 investors. Minimum investment $10,000, recommended 3-year tenor, quarterly dividends.">Domus Investments Fund - Emerald (DIFE) is a discretionary private-debt fund diversified across Venezuela, Spain, the Dominican Republic, and the US (real estate, restaurants, financial services, and more). $3.9M in assets under management, a historical ~17% annualized return, and $271K already distributed in dividends to 47 investors. Minimum investment $10,000, recommended 3-year tenor, quarterly dividends.</p>
         <div class="product-links">
@@ -918,7 +948,7 @@
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card reveal">
         <h3 class="product-title">Domus Drive Capital</h3>
         <p class="product-desc" data-es="Financiamiento privado para compra de vehículos nuevos y usados con reserva de dominio en Venezuela, respaldado por concesionarios Toyota, Ford, Changan y JAC. Cartera actual de $824K con colateral 2:1. Inversión mínima $25,000, plazos de 12 a 36 meses, con pago de intereses trimestral del 13% anual." data-en="Private financing for new and used vehicle purchases with title retention in Venezuela, backed by Toyota, Ford, Changan, and JAC dealership partners. Current $824K loan portfolio with 2:1 collateralization. Minimum investment $25,000, 12–36 month terms, with quarterly interest payments at a 13% annual rate.">Private financing for new and used vehicle purchases with title retention in Venezuela, backed by Toyota, Ford, Changan, and JAC dealership partners. Current $824K loan portfolio with 2:1 collateralization. Minimum investment $25,000, 12–36 month terms, with quarterly interest payments at a 13% annual rate.</p>
         <div class="product-links">
@@ -928,7 +958,7 @@
 
     </div>
 
-    <div class="track-record">
+    <div class="track-record reveal">
       <div class="track-record-header">
         <span class="track-record-title" data-es="Domus Investments — Historial de AUM (2022–2025)" data-en="Domus Investments — AUM Track Record (2022–2025)">Domus Investments — AUM Track Record (2022–2025)</span>
         <div class="track-record-stats">
@@ -977,6 +1007,11 @@
       <p class="track-record-note" data-es="* FY2024 y FY2025 son cifras proyectadas, no resultados reales. Fuente: material de Domus Investments (DIFE), noviembre 2024." data-en="* FY2024 and FY2025 are projected figures, not actual results. Source: Domus Investments (DIFE) materials, November 2024.">* FY2024 and FY2025 are projected figures, not actual results. Source: Domus Investments (DIFE) materials, November 2024.</p>
     </div>
 
+    <div class="products-cta">
+      <p class="products-cta-text" data-es="¿Alguna de estas oportunidades encaja con tus objetivos de inversión?" data-en="Is one of these opportunities a fit for your investment goals?">Is one of these opportunities a fit for your investment goals?</p>
+      <a href="#contact" class="hero-cta" data-es="Hablemos" data-en="Get in Touch">Get in Touch</a>
+    </div>
+
     <p class="insights-note" data-es="La información presentada en esta sección tiene fines exclusivamente informativos y no constituye asesoría de inversión, legal ni fiscal. El rendimiento pasado no garantiza resultados futuros. Antes de invertir, realice su propia debida diligencia y consulte a sus asesores legales, financieros y fiscales." data-en="The information presented in this section is for informational purposes only and does not constitute investment, legal, or tax advice. Past performance does not guarantee future results. Before investing, conduct your own due diligence and consult your legal, financial, and tax advisors.">The information presented in this section is for informational purposes only and does not constitute investment, legal, or tax advice. Past performance does not guarantee future results. Before investing, conduct your own due diligence and consult your legal, financial, and tax advisors.</p>
   </div>
 </section>
@@ -988,7 +1023,7 @@
     <h2 class="section-title" data-es="Perspectivas Semanales" data-en="Weekly Insights">Weekly Insights</h2>
     <div class="insights-grid">
 
-      <div class="insight-card">
+      <div class="insight-card reveal">
         <span class="insight-badge" data-es="Última edición" data-en="Latest">Latest</span>
         <h3 class="insight-title" data-es="Resumen Semanal de Mercados — Semana del 27 Jul al 1 Ago" data-en="Weekly Market Recap — Week of Jul 27 – Aug 1">Weekly Market Recap — Week of Jul 27 – Aug 1</h3>
         <p class="insight-date">August 3, 2026</p>
@@ -997,7 +1032,7 @@
         <a href="reports/weekly-2026-08-03.pdf" class="insight-download" download>⬇ &nbsp;<span data-es="Descargar PDF" data-en="Download PDF">Download PDF</span></a>
       </div>
 
-      <div class="insight-card">
+      <div class="insight-card reveal">
         <span class="insight-badge" style="background:rgba(201,168,76,0.15);color:var(--gold);" data-es="Próximamente" data-en="Coming Soon">Coming Soon</span>
         <h3 class="insight-title" data-es="Resumen Semanal de Mercados — Semana del 3 al 7 Ago" data-en="Weekly Market Recap — Week of Aug 3 – 7">Weekly Market Recap — Week of Aug 3 – 7</h3>
         <p class="insight-date" data-es="Disponible el próximo lunes" data-en="Available next Monday">Available next Monday</p>
@@ -1125,6 +1160,22 @@
 
   updateAll();
   setInterval(updateAll, 60000);
+
+  /* ── Scroll reveal ───────────────────────────── */
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
 </script>
 
 </body>
