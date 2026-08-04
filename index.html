@@ -499,6 +499,79 @@
       gap: 0.5rem 1.5rem;
     }
 
+    /* ─── TRACK RECORD CHART ─────────────────────────────── */
+    .track-record {
+      background: var(--white);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 2rem 2rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .track-record-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .track-record-title {
+      font-family: var(--font);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .track-record-stats {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .track-stat-value {
+      font-family: var(--font);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--gold2);
+      display: block;
+    }
+
+    .track-stat-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .track-record-legend {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.75rem;
+      color: #555;
+    }
+
+    .track-record-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .legend-swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .track-record-chart { width: 100%; height: auto; display: block; }
+
+    .track-record-note {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
     /* ─── CONTACT ──────────────────────────────────────── */
     #contact {
       background: var(--navy);
@@ -854,6 +927,56 @@
       </div>
 
     </div>
+
+    <div class="track-record">
+      <div class="track-record-header">
+        <span class="track-record-title" data-es="Domus Investments — Historial de AUM (2022–2025)" data-en="Domus Investments — AUM Track Record (2022–2025)">Domus Investments — AUM Track Record (2022–2025)</span>
+        <div class="track-record-stats">
+          <div>
+            <span class="track-stat-value">7.7x</span>
+            <span class="track-stat-label" data-es="Crecimiento en AUM" data-en="AUM Growth">AUM Growth</span>
+          </div>
+          <div>
+            <span class="track-stat-value">~17%</span>
+            <span class="track-stat-label" data-es="Rend. anual promedio" data-en="Avg. Annual Yield">Avg. Annual Yield</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="track-record-legend">
+        <span><span class="legend-swatch" style="background:#c9a84c;"></span><span data-es="Real" data-en="Actual">Actual</span></span>
+        <span><span class="legend-swatch" style="background:#e8c97a;opacity:0.6;border:1px dashed #c9a84c;"></span><span data-es="Proyectado *" data-en="Projected *">Projected *</span></span>
+      </div>
+
+      <svg class="track-record-chart" viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Domus Investments AUM grew from $195K in FY2022 to a projected $1.5M in FY2025, a 7.7x increase">
+        <line x1="60" y1="250" x2="660" y2="250" stroke="#ddd" stroke-width="1"/>
+        <line x1="60" y1="180" x2="660" y2="180" stroke="#eee" stroke-width="1"/>
+        <line x1="60" y1="110" x2="660" y2="110" stroke="#eee" stroke-width="1"/>
+        <line x1="60" y1="40"  x2="660" y2="40"  stroke="#eee" stroke-width="1"/>
+        <text x="50" y="254" text-anchor="end" font-size="11" fill="#8a8a8a" font-family="Helvetica, Arial, sans-serif">$0</text>
+        <text x="50" y="184" text-anchor="end" font-size="11" fill="#8a8a8a" font-family="Helvetica, Arial, sans-serif">$500K</text>
+        <text x="50" y="114" text-anchor="end" font-size="11" fill="#8a8a8a" font-family="Helvetica, Arial, sans-serif">$1M</text>
+        <text x="50" y="44"  text-anchor="end" font-size="11" fill="#8a8a8a" font-family="Helvetica, Arial, sans-serif">$1.5M</text>
+
+        <rect x="100" y="223" width="80" height="27" rx="4" fill="#c9a84c"><title>FY2022 · $195K AUM · 16.7%</title></rect>
+        <text x="140" y="213" text-anchor="middle" font-size="13" font-weight="700" fill="#0a1628" font-family="Helvetica, Arial, sans-serif">$195K</text>
+        <text x="140" y="270" text-anchor="middle" font-size="12" fill="#0a1628" font-family="Helvetica, Arial, sans-serif">FY2022</text>
+
+        <rect x="240" y="172" width="80" height="78" rx="4" fill="#c9a84c"><title>FY2023 · $555K AUM · 18.1%</title></rect>
+        <text x="280" y="162" text-anchor="middle" font-size="13" font-weight="700" fill="#0a1628" font-family="Helvetica, Arial, sans-serif">$555K</text>
+        <text x="280" y="270" text-anchor="middle" font-size="12" fill="#0a1628" font-family="Helvetica, Arial, sans-serif">FY2023</text>
+
+        <rect x="380" y="82" width="80" height="168" rx="4" fill="#e8c97a" fill-opacity="0.6" stroke="#c9a84c" stroke-width="1.5" stroke-dasharray="4,3"><title>FY2024 (Proj.) · $1.2M AUM · 17.1%</title></rect>
+        <text x="420" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#0a1628" font-family="Helvetica, Arial, sans-serif">$1.2M</text>
+        <text x="420" y="270" text-anchor="middle" font-size="12" fill="#0a1628" font-family="Helvetica, Arial, sans-serif">FY2024 *</text>
+
+        <rect x="520" y="40" width="80" height="210" rx="4" fill="#e8c97a" fill-opacity="0.6" stroke="#c9a84c" stroke-width="1.5" stroke-dasharray="4,3"><title>FY2025 (Proj.) · $1.5M AUM · 17.5%</title></rect>
+        <text x="560" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#0a1628" font-family="Helvetica, Arial, sans-serif">$1.5M</text>
+        <text x="560" y="270" text-anchor="middle" font-size="12" fill="#0a1628" font-family="Helvetica, Arial, sans-serif">FY2025 *</text>
+      </svg>
+      <p class="track-record-note" data-es="* FY2024 y FY2025 son cifras proyectadas, no resultados reales. Fuente: material de Domus Investments (DIFE), noviembre 2024." data-en="* FY2024 and FY2025 are projected figures, not actual results. Source: Domus Investments (DIFE) materials, November 2024.">* FY2024 and FY2025 are projected figures, not actual results. Source: Domus Investments (DIFE) materials, November 2024.</p>
+    </div>
+
     <p class="insights-note" data-es="La información presentada en esta sección tiene fines exclusivamente informativos y no constituye asesoría de inversión, legal ni fiscal. El rendimiento pasado no garantiza resultados futuros. Antes de invertir, realice su propia debida diligencia y consulte a sus asesores legales, financieros y fiscales." data-en="The information presented in this section is for informational purposes only and does not constitute investment, legal, or tax advice. Past performance does not guarantee future results. Before investing, conduct your own due diligence and consult your legal, financial, and tax advisors.">The information presented in this section is for informational purposes only and does not constitute investment, legal, or tax advice. Past performance does not guarantee future results. Before investing, conduct your own due diligence and consult your legal, financial, and tax advisors.</p>
   </div>
 </section>
