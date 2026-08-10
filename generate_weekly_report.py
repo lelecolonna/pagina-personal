@@ -29,23 +29,21 @@ FOOTER_H = 0.6 * inch
 CONTENT = {
     "tag": "ANÁLISIS DE MERCADOS",
     "title": "Resumen Semanal de Mercados",
-    "period": "Semana del 27 de julio al 1 de agosto, 2026",
-    "published": "Publicado el 3 de agosto, 2026",
+    "period": "Semana del 3 al 7 de agosto, 2026",
+    "published": "Publicado el 10 de agosto, 2026",
     "body": (
-        "Los mercados cerraron la semana en verde —S&amp;P 500 +1.1%, Nasdaq +1.6%, "
-        "Dow +1%— pero el liderazgo fue extremadamente concentrado en unas pocas "
-        "tecnológicas. Microsoft protagonizó el mayor salto de capitalización en un "
-        "solo día de la historia tras resultados sólidos en Azure, mientras Meta se "
-        "desplomó por preocupaciones de gasto de capital. La Fed mantuvo tasas sin "
-        "cambios (con tres disidencias), y el repunte de los rendimientos que siguió "
-        "desencadenó liquidaciones forzadas en fondos apalancados en IA. Fundstrat "
-        "está dividido: mientras algunos analistas leen esto como una posible "
-        "capitulación técnica, otros advierten que sectores como salud y financieras "
-        "—no tecnología— lideran la fortaleza real del mercado. Julio cerró "
-        "prácticamente plano para el S&amp;P y en rojo para el Nasdaq."
+        "Los mercados vivieron una de sus mejores semanas del año: el S&amp;P 500 "
+        "avanzó 3.6% hasta un cierre récord sobre los 7,700 puntos, el Nasdaq subió "
+        "más de 5% y el Dow ganó cerca de 3%. El impulso vino del regreso de la "
+        "tecnología tras meses de rezago, más un dato de empleo de julio débil que "
+        "reavivó las expectativas de recortes de tasas. Financieras y salud también "
+        "mostraron solidez. Con resultados corporativos superando estimaciones y "
+        "Tom Lee de Fundstrat proyectando al S&amp;P 500 entre 7,900 y 8,000, el "
+        "optimismo domina, aunque la atención pasa ahora a los datos de inflación "
+        "de la próxima semana."
     ),
     "sources": "Fuentes: Fundstrat / FS Insight · Bloomberg · MarketWatch",
-    "filename": "weekly-2026-08-03.pdf",
+    "filename": "weekly-2026-08-10.pdf",
 }
 
 
