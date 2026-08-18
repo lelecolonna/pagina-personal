@@ -29,21 +29,21 @@ FOOTER_H = 0.6 * inch
 CONTENT = {
     "tag": "ANÁLISIS DE MERCADOS",
     "title": "Resumen Semanal de Mercados",
-    "period": "Semana del 3 al 7 de agosto, 2026",
-    "published": "Publicado el 10 de agosto, 2026",
+    "period": "Semana del 10 al 14 de agosto, 2026",
+    "published": "Publicado el 17 de agosto, 2026",
     "body": (
-        "Los mercados vivieron una de sus mejores semanas del año: el S&amp;P 500 "
-        "avanzó 3.6% hasta un cierre récord sobre los 7,700 puntos, el Nasdaq subió "
-        "más de 5% y el Dow ganó cerca de 3%. El impulso vino del regreso de la "
-        "tecnología tras meses de rezago, más un dato de empleo de julio débil que "
-        "reavivó las expectativas de recortes de tasas. Financieras y salud también "
-        "mostraron solidez. Con resultados corporativos superando estimaciones y "
-        "Tom Lee de Fundstrat proyectando al S&amp;P 500 entre 7,900 y 8,000, el "
-        "optimismo domina, aunque la atención pasa ahora a los datos de inflación "
-        "de la próxima semana."
+        "La semana del 10 al 14 de agosto dejó ganancias moderadas: el S&amp;P 500 "
+        "sumó cerca de 0.4% hasta 7,785 puntos —tras un máximo histórico el "
+        "jueves— y encadenó su tercera semana al alza, mientras el Nasdaq avanzó "
+        "levemente y el Dow cedió terreno. El impulso vino de una inflación de "
+        "julio en línea con lo esperado y ventas minoristas más débiles de lo "
+        "previsto, que redujeron las apuestas por una subida de tasas en "
+        "septiembre y hundieron la volatilidad a mínimos de meses. Tom Lee, de "
+        "Fundstrat, ve al S&amp;P 500 entre 7,900 y 8,000 puntos hacia fin de mes, "
+        "apoyado en el pacto de financiación de IA entre Nvidia y varias gestoras."
     ),
     "sources": "Fuentes: Fundstrat / FS Insight · Bloomberg · MarketWatch",
-    "filename": "weekly-2026-08-10.pdf",
+    "filename": "weekly-2026-08-17.pdf",
 }
 
 
