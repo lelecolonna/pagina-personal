@@ -29,21 +29,22 @@ FOOTER_H = 0.6 * inch
 CONTENT = {
     "tag": "ANÁLISIS DE MERCADOS",
     "title": "Resumen Semanal de Mercados",
-    "period": "Semana del 10 al 14 de agosto, 2026",
-    "published": "Publicado el 17 de agosto, 2026",
+    "period": "Semana del 17 al 21 de agosto, 2026",
+    "published": "Publicado el 24 de agosto, 2026",
     "body": (
-        "La semana del 10 al 14 de agosto dejó ganancias moderadas: el S&amp;P 500 "
-        "sumó cerca de 0.4% hasta 7,785 puntos —tras un máximo histórico el "
-        "jueves— y encadenó su tercera semana al alza, mientras el Nasdaq avanzó "
-        "levemente y el Dow cedió terreno. El impulso vino de una inflación de "
-        "julio en línea con lo esperado y ventas minoristas más débiles de lo "
-        "previsto, que redujeron las apuestas por una subida de tasas en "
-        "septiembre y hundieron la volatilidad a mínimos de meses. Tom Lee, de "
-        "Fundstrat, ve al S&amp;P 500 entre 7,900 y 8,000 puntos hacia fin de mes, "
-        "apoyado en el pacto de financiación de IA entre Nvidia y varias gestoras."
+        "La semana del 17 al 21 de agosto trajo el retroceso más marcado desde "
+        "julio: el S&amp;P 500 cedió 1.4% a 7,674 puntos, el Nasdaq bajó cerca de "
+        "2% y el Dow encadenó su segunda semana en rojo, con la tecnología entre "
+        "los sectores más golpeados. El detonante fue el repunte de los "
+        "rendimientos de bonos largos —el treinta años tocó máximos de casi dos "
+        "décadas— ante la preocupación por el déficit fiscal global y el "
+        "creciente capex de IA. Un anuncio de mayor recompra de deuda del Tesoro "
+        "alivió la presión y el mercado cerró con un repunte el viernes. Tom "
+        "Lee, de Fundstrat, mantiene una visión constructiva pero anticipa "
+        "turbulencia hacia el otoño."
     ),
     "sources": "Fuentes: Fundstrat / FS Insight · Bloomberg · MarketWatch",
-    "filename": "weekly-2026-08-17.pdf",
+    "filename": "weekly-2026-08-24.pdf",
 }
 
 
