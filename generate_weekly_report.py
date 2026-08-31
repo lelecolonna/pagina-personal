@@ -29,22 +29,22 @@ FOOTER_H = 0.6 * inch
 CONTENT = {
     "tag": "ANÁLISIS DE MERCADOS",
     "title": "Resumen Semanal de Mercados",
-    "period": "Semana del 17 al 21 de agosto, 2026",
-    "published": "Publicado el 24 de agosto, 2026",
+    "period": "Semana del 24 al 28 de agosto, 2026",
+    "published": "Publicado el 31 de agosto, 2026",
     "body": (
-        "La semana del 17 al 21 de agosto trajo el retroceso más marcado desde "
-        "julio: el S&amp;P 500 cedió 1.4% a 7,674 puntos, el Nasdaq bajó cerca de "
-        "2% y el Dow encadenó su segunda semana en rojo, con la tecnología entre "
-        "los sectores más golpeados. El detonante fue el repunte de los "
-        "rendimientos de bonos largos —el treinta años tocó máximos de casi dos "
-        "décadas— ante la preocupación por el déficit fiscal global y el "
-        "creciente capex de IA. Un anuncio de mayor recompra de deuda del Tesoro "
-        "alivió la presión y el mercado cerró con un repunte el viernes. Tom "
-        "Lee, de Fundstrat, mantiene una visión constructiva pero anticipa "
-        "turbulencia hacia el otoño."
+        "La semana del 24 al 28 de agosto trajo ganancias modestas pero "
+        "concentradas: el S&amp;P 500 avanzó 0.5%, el Nasdaq 0.9% y el Dow logró "
+        "su primera semana positiva en tres, impulsados por un puñado de "
+        "tecnológicas de gran capitalización mientras la mayoría de las acciones "
+        "retrocedía. El catalizador fue el reporte trimestral de Nvidia, cuyos "
+        "ingresos casi se duplicaron interanualmente con una guía que superó "
+        "expectativas, reavivando el entusiasmo por la inteligencia artificial. "
+        "El discurso de Jackson Hole del presidente de la Fed, Kevin Warsh, de "
+        "tono cauto sobre la inflación, moderó el repunte del viernes, aunque "
+        "los rendimientos de bonos se mantuvieron estables."
     ),
     "sources": "Fuentes: Fundstrat / FS Insight · Bloomberg · MarketWatch",
-    "filename": "weekly-2026-08-24.pdf",
+    "filename": "weekly-2026-08-31.pdf",
 }
 
 
