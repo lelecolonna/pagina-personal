@@ -29,22 +29,21 @@ FOOTER_H = 0.6 * inch
 CONTENT = {
     "tag": "ANÁLISIS DE MERCADOS",
     "title": "Resumen Semanal de Mercados",
-    "period": "Semana del 24 al 28 de agosto, 2026",
-    "published": "Publicado el 31 de agosto, 2026",
+    "period": "Semana del 31 de agosto al 4 de septiembre, 2026",
+    "published": "Publicado el 7 de septiembre, 2026",
     "body": (
-        "La semana del 24 al 28 de agosto trajo ganancias modestas pero "
-        "concentradas: el S&amp;P 500 avanzó 0.5%, el Nasdaq 0.9% y el Dow logró "
-        "su primera semana positiva en tres, impulsados por un puñado de "
-        "tecnológicas de gran capitalización mientras la mayoría de las acciones "
-        "retrocedía. El catalizador fue el reporte trimestral de Nvidia, cuyos "
-        "ingresos casi se duplicaron interanualmente con una guía que superó "
-        "expectativas, reavivando el entusiasmo por la inteligencia artificial. "
-        "El discurso de Jackson Hole del presidente de la Fed, Kevin Warsh, de "
-        "tono cauto sobre la inflación, moderó el repunte del viernes, aunque "
-        "los rendimientos de bonos se mantuvieron estables."
+        "La semana del 31 de agosto al 4 de septiembre cerró mixta: el S&amp;P "
+        "500 sumó apenas 0.1%, el Nasdaq avanzó 0.4% y el Dow cedió 0.3%, "
+        "arrastrado por una caída del 0.5% el viernes tras un reporte de empleo "
+        "de agosto muy superior a lo esperado (162,000 nóminas frente a ~55,000 "
+        "previstas), que elevó a 58% la probabilidad de una subida de tasas en "
+        "la Fed del 15-16 de septiembre. Los rendimientos del Tesoro subieron y "
+        "Tesla se desplomó más de 6% tras el debut de su Cybercab. Tom Lee de "
+        "Fundstrat mantiene una postura contraria, ve el pesimismo generalizado "
+        "como señal alcista y espera que la Fed termine pausando."
     ),
     "sources": "Fuentes: Fundstrat / FS Insight · Bloomberg · MarketWatch",
-    "filename": "weekly-2026-08-31.pdf",
+    "filename": "weekly-2026-09-07.pdf",
 }
 
 
