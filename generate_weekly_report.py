@@ -29,21 +29,21 @@ FOOTER_H = 0.6 * inch
 CONTENT = {
     "tag": "ANÁLISIS DE MERCADOS",
     "title": "Resumen Semanal de Mercados",
-    "period": "Semana del 31 de agosto al 4 de septiembre, 2026",
-    "published": "Publicado el 7 de septiembre, 2026",
+    "period": "Semana del 7 al 11 de septiembre, 2026",
+    "published": "Publicado el 14 de septiembre, 2026",
     "body": (
-        "La semana del 31 de agosto al 4 de septiembre cerró mixta: el S&amp;P "
-        "500 sumó apenas 0.1%, el Nasdaq avanzó 0.4% y el Dow cedió 0.3%, "
-        "arrastrado por una caída del 0.5% el viernes tras un reporte de empleo "
-        "de agosto muy superior a lo esperado (162,000 nóminas frente a ~55,000 "
-        "previstas), que elevó a 58% la probabilidad de una subida de tasas en "
-        "la Fed del 15-16 de septiembre. Los rendimientos del Tesoro subieron y "
-        "Tesla se desplomó más de 6% tras el debut de su Cybercab. Tom Lee de "
-        "Fundstrat mantiene una postura contraria, ve el pesimismo generalizado "
-        "como señal alcista y espera que la Fed termine pausando."
+        "La semana del 7 al 11 de septiembre cerró negativa para Wall Street: "
+        "el S&amp;P 500 cedió 0.8%, el Dow retrocedió cerca de 1.6% y el Nasdaq "
+        "bajó 0.7%, presionados por un salto del petróleo por encima de los 100 "
+        "dólares y un rendimiento del Tesoro a 10 años cercano al 5%, su nivel "
+        "más alto desde 2023, en medio de tensiones entre Estados Unidos e "
+        "Irán. El viernes trajo alivio: la inflación de agosto llegó en línea "
+        "con lo esperado y las tres bolsas rebotaron con fuerza. Tom Lee, de "
+        "Fundstrat, sigue confiando en que la Fed hará una pausa y mantiene sus "
+        "apuestas por cripto, energía y tecnología."
     ),
     "sources": "Fuentes: Fundstrat / FS Insight · Bloomberg · MarketWatch",
-    "filename": "weekly-2026-09-07.pdf",
+    "filename": "weekly-2026-09-14.pdf",
 }
 
 
